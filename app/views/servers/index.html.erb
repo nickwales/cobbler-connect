@@ -1,0 +1,29 @@
+<h1>Listing servers</h1>
+
+
+
+
+
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Profile</th>
+    <th>IP Address</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @servers.each do |s| %>
+  <tr>
+    <td><%= s["name"] %></td>
+    <td><%= s["profile"] %></td>  
+    <td><%= s["interfaces"]["eth0"]["ip_address"] %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Server', new_server_path %>
